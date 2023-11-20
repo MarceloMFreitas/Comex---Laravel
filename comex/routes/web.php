@@ -19,5 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/categorias', [CategoriasController::class,'index']);
-
 Route::post('/categorias/cadastrar', [CategoriasController::class,'store']);
