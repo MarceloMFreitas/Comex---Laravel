@@ -1,13 +1,15 @@
 <x-layout title="Categorias">
 
-    <a href="/categorias/salvar">Adicionar</a>
-
-    <ul>
+   
+    <ul class="list-group">
         @foreach ($categorias as $categoria )
 
-            <li>{{$categoria->nome}}</li>    
+            <li class="list-group-item">{{$categoria->nome}}</li>    
         
         @endforeach
     </ul>
+
+    <a href="/categorias/salvar" class="btn btn-primary mb-2">Adicionar</a>
+
 
 </x-layout>
