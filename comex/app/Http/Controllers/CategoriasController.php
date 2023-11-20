@@ -18,6 +18,8 @@ class CategoriasController extends Controller
     public function create(){
         return view('categorias.create');
     }
+
+    
     public function store(Request $request){
        
         $nomeCategoria = $request->input('nome');
