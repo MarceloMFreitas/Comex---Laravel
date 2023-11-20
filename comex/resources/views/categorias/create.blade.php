@@ -2,11 +2,11 @@
 
     <form action="/categorias/cadastrar" method="post">
         @csrf
-        <div>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome">
+        <div class="mb-5">
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" id="nome" name="nome" class="form-control">
         </div>
-        <button type="submit">Adicionar</button>
+        <button type="submit" class="btn btn-primary">Adicionar</button>
     </form>
 
 </x-layout>
