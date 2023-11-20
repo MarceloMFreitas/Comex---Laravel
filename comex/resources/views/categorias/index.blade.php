@@ -5,7 +5,7 @@
     <ul>
         @foreach ($categorias as $categoria )
 
-            <li>{{$categoria}}</li>    
+            <li>{{$categoria->nome}}</li>    
         
         @endforeach
     </ul>
