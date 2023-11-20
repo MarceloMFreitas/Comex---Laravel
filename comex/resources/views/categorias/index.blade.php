@@ -1,5 +1,7 @@
 <x-layout title="Categorias">
 
+    <a href="/categorias/salvar">Adicionar</a>
+
     <ul>
         @foreach ($categorias as $categoria )
 
