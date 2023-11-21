@@ -26,4 +26,10 @@ class CategoriasController extends Controller
 
         return to_route('categorias.index');
     }
+
+    public function destroy(Request $request){
+        
+        Categoria::destroy($request->categoria);
+        return to_route('categorias.index');
+    }
 }
