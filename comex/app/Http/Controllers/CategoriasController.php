@@ -22,13 +22,8 @@ class CategoriasController extends Controller
     
     public function store(Request $request){
        
-        $nomeCategoria = $request->input('nome');
-       
-        $categoria = new Categoria();
-        $categoria->nome = $nomeCategoria;
-        $categoria->save();
+        Categoria::create($request->all());
 
-
-        return redirect('/categorias');
+        return to_route('categorias.index');
     }
 }
