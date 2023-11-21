@@ -19,5 +19,6 @@ Route::get('/', function () {
 });
 
 
-Route::resource('/categorias', CategoriasController::class);
+Route::resource('/categorias', CategoriasController::class)->only(['index','create', 'store', 'destroy']);
+
 
