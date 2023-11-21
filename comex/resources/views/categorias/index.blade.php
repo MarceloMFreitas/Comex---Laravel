@@ -9,7 +9,7 @@
         @endforeach
     </ul>
 
-    <a href="/categorias/salvar" class="btn btn-primary mb-2">Adicionar</a>
+    <a href="{{route('categorias.create')}}" class="btn btn-primary mb-2">Adicionar</a>
 
 
 </x-layout>
