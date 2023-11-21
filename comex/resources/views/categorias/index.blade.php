@@ -4,7 +4,15 @@
     <ul class="list-group">
         @foreach ($categorias as $categoria )
 
-            <li class="list-group-item">{{$categoria->nome}}</li>    
+            <li class="list-group-item d-flex justify-content-between align-items-center">{{$categoria->nome}}
+
+                <form action="{{ route('categorias.destroy', $categoria->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger btn-sm">X</button>
+                </form>
+
+            </li>    
         
         @endforeach
     </ul>
