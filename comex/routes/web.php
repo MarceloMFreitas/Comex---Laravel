@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/categorias');
 });
 
-Route::get('/categorias', [CategoriasController::class,'index']);
-Route::get('/categorias/salvar', [CategoriasController::class,'create']);
-Route::post('/categorias/cadastrar', [CategoriasController::class,'store']);
+
+Route::resource('/categorias', CategoriasController::class);
+
