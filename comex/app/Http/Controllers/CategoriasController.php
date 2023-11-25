@@ -36,4 +36,15 @@ class CategoriasController extends Controller
     
         return to_route('categorias.index')->with('mensagem.sucesso',"Categoria '$categoria->nome' removida com sucesso");
     }
+    public function edit(Categoria $categoria){
+        
+        return view('categorias.edit')->with('categoria',$categoria);
+
+    }
+
+    public function update(Request $request, Categoria $categoria){
+        $categoria->fill($request->all());
+        $categoria->save();
+        return to_route('categorias.index')->with('mensagem.sucesso',"categoria '$categoria->nome' atualizada com sucesso");
+    }
 }
