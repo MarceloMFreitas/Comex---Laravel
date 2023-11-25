@@ -24,17 +24,17 @@ class CategoriasController extends Controller
     
     public function store(Request $request){
        
-        Categoria::create($request->all());
+        $categoria = Categoria::create($request->all());
 
-        session()->flash('mensagem.sucesso','Categoria adicionada com sucesso');
+        session()->flash('mensagem.sucesso',"Categoria '$categoria->nome' adicionada com sucesso");
 
         return to_route('categorias.index');
     }
 
-    public function destroy(Request $request){
+    public function destroy(Request $request, Categoria $categoria){
         
-        Categoria::destroy($request->categoria);
-        session()->flash('mensagem.sucesso','Categoria removida com sucesso');
+        $categoria->delete();
+        session()->flash('mensagem.sucesso',"Categoria '$categoria->nome' removida com sucesso");
         return to_route('categorias.index');
     }
 }
