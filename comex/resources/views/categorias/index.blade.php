@@ -1,5 +1,11 @@
 <x-layout title="Categorias">
 
+@isset($mensagemSucesso)
+    <div class="alert alert-success">
+        {{$mensagemSucesso}}
+    </div>
+@endisset
+
    
     <ul class="list-group">
         @foreach ($categorias as $categoria )
