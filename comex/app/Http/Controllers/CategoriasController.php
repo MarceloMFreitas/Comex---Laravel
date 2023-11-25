@@ -8,10 +8,12 @@ use App\Models\Categoria;
 
 class CategoriasController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $categorias = Categoria::query()->orderBy('nome')->get() ;
+
+        $mensagemSucesso = session('mensagem.sucesso');
         
-        return view('categorias.index')->with('categorias',$categorias ) ;
+        return view('categorias.index')->with('categorias',$categorias)->with('mensagemSucesso', $mensagemSucesso) ;
 
     }
 
@@ -24,12 +26,15 @@ class CategoriasController extends Controller
        
         Categoria::create($request->all());
 
+        session()->flash('mensagem.sucesso','Categoria adicionada com sucesso');
+
         return to_route('categorias.index');
     }
 
     public function destroy(Request $request){
         
         Categoria::destroy($request->categoria);
+        session()->flash('mensagem.sucesso','Categoria removida com sucesso');
         return to_route('categorias.index');
     }
 }
