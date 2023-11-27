@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoriasFormRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Categoria;
@@ -22,7 +23,8 @@ class CategoriasController extends Controller
     }
 
     
-    public function store(Request $request){
+    public function store(CategoriasFormRequest $request){
+
        
         $categoria = Categoria::create($request->all());
 
@@ -42,7 +44,7 @@ class CategoriasController extends Controller
 
     }
 
-    public function update(Request $request, Categoria $categoria){
+    public function update(CategoriasFormRequest $request, Categoria $categoria){
         $categoria->fill($request->all());
         $categoria->save();
         return to_route('categorias.index')->with('mensagem.sucesso',"categoria '$categoria->nome' atualizada com sucesso");
