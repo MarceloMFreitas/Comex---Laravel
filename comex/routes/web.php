@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\CategoriasController;
+use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\CllientesController;
+use App\Http\Controllers\ProdutosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +23,7 @@ Route::get('/', function () {
 
 
 Route::resource('/categorias', CategoriasController::class)->except(['show']);
+Route::resource('/clientes', ClientesController::class)->except(['show']);
+Route::resource('/produtos', ProdutosController::class)->except(['show']);
 
 
