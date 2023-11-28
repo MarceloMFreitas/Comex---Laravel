@@ -11,6 +11,11 @@ class Produto extends Model
 {
     use HasFactory;
  
+    
     protected $primaryKey = 'id';
 
+    public function categoria(){
+
+        return $this->hasOne(Categoria::class, 'categoria', 'id');
+    }
 }
